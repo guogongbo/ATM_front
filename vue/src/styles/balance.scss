@@ -1,0 +1,15 @@
+.el-card {
+    position: fixed;
+    bottom: 50px;
+    right: 300px;
+    width: 200px;
+    height: 50px;
+    color: #909399;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+
+    .el-card__body {
+        padding: 0 20px;
+    }
+}
