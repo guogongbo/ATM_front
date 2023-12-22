@@ -7,6 +7,7 @@
     </div>
     <div class="center">
       <div><h1>请确认卡号是否正确</h1></div>
+      <br> <br><br>
       <el-input placeholder="" v-model="input" :disabled="true"></el-input>
     </div>
     <div class="right">
@@ -36,7 +37,7 @@ export default {
   display:flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png")  no-repeat center fixed;
   background-size: cover;
 }
@@ -62,4 +63,10 @@ export default {
   height:750px;
   
 }
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
+}
+
 </style>

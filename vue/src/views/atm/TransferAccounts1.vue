@@ -8,6 +8,7 @@
       </div>
       <div class="center">
         <div><h1>请输入转账账号：</h1></div>
+        <br> <br><br>
         <el-input placeholder="请输入转出账户银行卡号" v-model="toAccount"></el-input>
       </div>
       <div class="right">
@@ -46,7 +47,7 @@ export default {
       };
       var data = qs.stringify(params);
       this.$axios
-        .post("http://127.0.0.1:8080/BankTransfer/getToAccount", data)
+        .post("http://8.139.5.168:8080/BankTransfer/getToAccount", data)
         .then((res) => {
           var len = res.data.length;
           if (len > 0) {
@@ -84,7 +85,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png") no-repeat center fixed;
   background-size: cover;
 }

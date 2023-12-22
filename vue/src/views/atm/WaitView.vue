@@ -10,8 +10,9 @@
       </div>
       <div class="center">
         <div><h1>欢迎您使用ATM机，请输入银行卡号</h1></div>
+        <br> <br><br>
         <div>
-          <el-input placeholder="请输入银行卡号" v-model="input" clearable></el-input>
+          <el-input placeholder="请输入银行卡号" v-model="input" ></el-input>
         </div>
       </div>
       <div class="right">
@@ -32,34 +33,43 @@ export default {
   methods: {
     cardsubmit() {
       jsCookie.set("cardnumber", this.input);
-       if (this.input == "") {
+      if (this.input == "") {
         this.$message({
           showClose: true,
           message: "银行卡号不能为空",
           type: "error",
         });
       } else {
-         this.$getBankcardinfo.getBankBin(this.input, (err, data) => {
-           console.log(this.input);
-           console.log(err);
-           if (!err) {
-             jsCookie.set("bankName", data.bankName);
-             jsCookie.set("cardTypeName", data.cardTypeName);
-             console.log("///////",data.bankName)
-           }
-         })
-          if(jsCookie.get('bankName')!="中国银行")
-          {
+        this.$getBankcardinfo.getBankBin(this.input, (err, data) => {
+          console.log(this.input);
+          console.log(err);
+          if (!err) {
+            console.log(data);
+            
+              jsCookie.set("bankName", data.bankName);
+              jsCookie.set("cardTypeName", data.cardTypeName);
+              console.log("///////",data.bankName)
+              this.$message({
+                showClose: true,
+                message:"开户行:"+data.bankName+" \n银行卡类型:"+data.cardTypeName,
+              });
+              this.$router.push({ path: "../WaitView1" });
+            
 
+          }
+          else if (err){
             this.$message({
               showClose: true,
               message: "银行卡不正确",
               type: "error",
             });
+
           }
-         else this.$router.push({ path: "../WaitView1" });
+        })
+
       }
     },
+
   },
 /*   mounted() {
     this.cardsubmit();
@@ -72,7 +82,7 @@ export default {
   display:flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png")  no-repeat center fixed;
   background-size: cover;
 }

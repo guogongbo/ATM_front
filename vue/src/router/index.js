@@ -243,7 +243,7 @@ const routes = [
     name: 'TakeCard',
     component: () => import('../views/atm/TakeCard.vue'),
     meta: {
-      needlogin: true
+      needlogin: false
     }
   }
 ]

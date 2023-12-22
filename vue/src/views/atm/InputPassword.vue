@@ -3,6 +3,7 @@
     <div class="main">
       <div class="left"><router-link to="/TakeCard"><el-button>退卡</el-button></router-link></div>
       <div class="center"><h1>请输入您的密码：</h1>
+      <br> <br><br>
         <el-input placeholder="密码" v-model="password" show-password maxlength="6"></el-input>
       </div>
       <div class="right">
@@ -54,7 +55,7 @@ export default {
   display:flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png")  no-repeat center fixed;
   background-size: cover;
 }
@@ -89,4 +90,10 @@ export default {
   padding-top: 20px;
   box-sizing: border-box;
 }
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
+}
+
 </style>

@@ -50,11 +50,11 @@ export default {
       id: id,
     };
     var data = qs.stringify(params);
-    this.$axios
+   /*  this.$axios
       .post("http://127.0.0.1:8080/BankTransfer/getCardNo", data)
       .then((res) => {
         this.cardno = res.data;
-      });
+      }); */
   },
 
   methods: {
@@ -75,7 +75,7 @@ export default {
         var data = qs.stringify(params);
         var _this = this;
         this.$axios
-          .post("http://127.0.0.1:8080/BankTransfer/disposit", data)
+          .post("http://8.139.5.168:8080/BankTransfer/disposit", data)
           .then(
             function(res) {
               console.log(res.data);
@@ -119,7 +119,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png") no-repeat center fixed;
   background-size: cover;
 }
@@ -150,4 +150,10 @@ export default {
 .table {
   text-align: center;
 }
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
+}
+
 </style>

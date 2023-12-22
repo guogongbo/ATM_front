@@ -10,7 +10,7 @@ function login(_this, username, password) {
     var data = qs.stringify(params);
 
     axios
-        .get("http://localhost:8080/BankTransfer/login?" + data)
+        .get("http://8.139.5.168:8080/BankTransfer/login?" + data)
         .then(
             function (res) {
                 if (res.data == "") {
@@ -57,7 +57,7 @@ function getMoney(_this) {
     };
     var data = qs.stringify(params);
     axios
-        .get("http://localhost:8080/BankTransfer/getMoney?"+ data)
+        .get("http://8.139.5.168:8080/BankTransfer/getMoney?"+ data)
         .then(
             function (res) {
                 console.log(res.data);
