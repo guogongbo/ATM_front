@@ -1,10 +1,11 @@
 <template>
   <form action="">
     <div class="main">
-      <div class="left"></div>
+      <div class="left"><div class="buttonDistance"><router-link to="/OperationView"><el-button> 返回</el-button></router-link></div></div>
       <div class="center">
         <div><h1>请输入您新的密码：</h1></div>
-        <el-input v-model="newpassword1" show-password maxlength="6"></el-input>
+        <br> <br><br>
+        <el-input  v-model="newpassword1"  show-password  maxlength="6"></el-input>
       </div>
       <div class="right">
         <div class="buttonDistance">
@@ -28,6 +29,8 @@ export default {
   },
   methods:{
    submit() {
+      var a=parseInt(this.newpassword1)
+      var length=this.newpassword1.length;
       jsCookie.set("newpassword1", this.newpassword1);
        if (this.newpassword1 == "") {
         this.$message({
@@ -35,7 +38,20 @@ export default {
           message: "新密码不能为空",
           type: "error",
         });
-      } else {
+      }
+      else if(length<6){
+          this.$message({
+          showClose: true,
+          message: "新密码长度必须为6位",
+          type: "error",
+      })}
+      else if(isNaN(a)||isNaN(Number(this.newpassword1))){
+         this.$message({
+          showClose: true,
+          message: "新密码必须为数字密码",
+          type: "error",})
+      }
+      else {
         this.$router.push({ path: "../ChangePassword1" });
       }
     },}
@@ -46,7 +62,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png") no-repeat center fixed;
   background-size: cover;
 }
@@ -74,4 +90,10 @@ export default {
   padding-top: 20px;
   box-sizing: border-box;
 }
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
+}
+
 </style>

@@ -3,7 +3,7 @@
   <div class="left"><div class="buttonDistance"><router-link to="/OperationView"><el-button>返回</el-button></router-link></div></div>
   <div class="center"><h1>交易成功，请选择操作</h1></div>  
   <div class="right"><div class="buttonDistance"><router-link to="/TakeCard"><el-button>退卡</el-button></router-link></div>
-                      <div class="buttonDistance"><router-link to="/PrintAReceipt2"><el-button>打印凭条</el-button></router-link></div></div>
+                      <div class="buttonDistance"><router-link to="/PrintAReceipt4"><el-button>打印凭条</el-button></router-link></div></div>
   </div>
 </template>
 <script>
@@ -20,7 +20,7 @@
   display:flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
    background: url("../../assets/中国银行图片.png")  no-repeat center fixed;
           background-size: cover;
 }
@@ -49,5 +49,10 @@
 .buttonDistance{
   padding-top:20px;
   box-sizing: border-box;
+}
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
 }
 </style>

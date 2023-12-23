@@ -8,6 +8,7 @@
       </div>
       <div class="center">
         <div><h1>请输入转账账号：</h1></div>
+        <br> <br><br>
         <el-input placeholder="请输入转出账户银行卡号" v-model="toAccount"></el-input>
       </div>
       <div class="right">
@@ -84,7 +85,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png") no-repeat center fixed;
   background-size: cover;
 }
@@ -111,5 +112,10 @@ export default {
 .buttonDistance {
   padding-top: 20px;
   box-sizing: border-box;
+}
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
 }
 </style>

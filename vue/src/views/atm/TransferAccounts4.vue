@@ -20,7 +20,7 @@
   display:flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
    background: url("../../assets/中国银行图片.png")  no-repeat center fixed;
           background-size: cover;
 }
@@ -49,5 +49,10 @@
 .buttonDistance{
   padding-top:20px;
   box-sizing: border-box;
+}
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
 }
 </style>

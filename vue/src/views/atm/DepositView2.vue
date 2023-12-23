@@ -50,11 +50,11 @@ export default {
       id: id,
     };
     var data = qs.stringify(params);
-    this.$axios
+   /*  this.$axios
       .post("http://127.0.0.1:8080/BankTransfer/getCardNo", data)
       .then((res) => {
         this.cardno = res.data;
-      });
+      }); */
   },
 
   methods: {
@@ -65,7 +65,8 @@ export default {
         this.money.trim() > 0
       ) {
         this.money = this.money.trim();
-
+         jsCookie.set("type", "存款");
+      jsCookie.set("transactionDetail", this.money);
         var id = JSON.parse(sessionStorage.getItem("user")).id;
         var params = {
           cardno: this.cardno,
@@ -85,7 +86,7 @@ export default {
                 type: "success",
               });
               getMoney(this);
-              this.$router.push("/TransactionSuccess");
+              this.$router.push("/TransactionSuccess1");
             }.bind(_this)
           )
           .catch((err) => {
@@ -119,7 +120,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png") no-repeat center fixed;
   background-size: cover;
 }
@@ -150,4 +151,10 @@ export default {
 .table {
   text-align: center;
 }
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
+}
+
 </style>

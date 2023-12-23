@@ -1,11 +1,11 @@
 <template>
     <div class="main">
   <div class="left"></div>
-  <div class="center1">
+  <div class="center">
     <h1>感谢您的使用,请取回您的银行卡</h1>
-    <el-button plain @click="backtowait">回到首页</el-button>
+    <br> <br><br>
   </div>  
-  <div class="right"></div>
+  <div class="right"><el-button plain @click="backtowait">回到首页</el-button></div>
   </div>
 </template>
 
@@ -13,6 +13,7 @@
 export default {
   data() {
     return {
+      timer: null, // 用于存储计时器的引用
     };
   },
   methods: {
@@ -20,6 +21,21 @@ export default {
       sessionStorage.clear();
       this.$router.push("./WaitView");
     },
+    startIdleTimer() {
+      // 设置计时器，当用户长时间无操作时触发跳转
+      this.timer = setTimeout(() => {
+        this.$router.push("./WaitView");
+      }, 30000); // 30秒后触发跳转，可根据需要调整超时时间
+    },
+    clearIdleTimer() {
+      // 当组件销毁时清除计时器，避免造成内存泄漏
+      clearTimeout(this.timer);
+    },
+  },
+   mounted() {
+    this.startIdleTimer();},
+  beforeDestroy() {
+    this.clearIdleTimer();
   },
 };
 </script>
@@ -29,7 +45,7 @@ export default {
   display:flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
    background: url("../../assets/中国银行图片.png")  no-repeat center fixed;
           background-size: cover;
 }
@@ -40,8 +56,8 @@ export default {
   height:750px;
 
 }
-.center1{
-  padding-top: 100px;
+.center{
+  padding-top: 50px;
     box-sizing: border-box;
   width:900px;
   height:750px;
@@ -59,4 +75,10 @@ export default {
   padding-top:20px;
   box-sizing: border-box;
 }
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
+}
+
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="left"><div class="buttonDistance"><router-link to="/TakeCard"><el-button>退卡</el-button></router-link></div></div>
-    <div class="center1"><h1>请在出钞口提取现金</h1></div>
+    <div class="center"><h1>请在出钞口提取现金</h1></div>
     <div class="right">
       <div class="buttonDistance"><router-link to="/WithdrawView"><el-button>继续取款</el-button></router-link></div>
       <div class="buttonDistance"><router-link to="/PrintAReceipt2"><el-button>打印凭条</el-button></router-link></div>
@@ -25,7 +25,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 750px;
+  height: 780px;
   background: url("../../assets/中国银行图片.png") no-repeat center fixed;
   background-size: cover;
 }
@@ -35,8 +35,8 @@ export default {
   width: 300px;
   height: 750px;
 }
-.center1 {
-  padding-top: 100px;
+.center {
+  padding-top: 50px;
   box-sizing: border-box;
   width: 900px;
   height: 750px;
@@ -52,5 +52,10 @@ export default {
 .buttonDistance {
   padding-top: 20px;
   box-sizing: border-box;
+}
+.el-button{
+  font-size: 30px;
+  color:black;
+  background-color: white;
 }
 </style>

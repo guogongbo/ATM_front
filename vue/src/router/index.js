@@ -167,6 +167,22 @@ const routes = [
     }
   },
   {
+    path: '/PrintAReceipt3',
+    name: 'PrintAReceipt3',
+    component: () => import('../views/atm/PrintAReceipt3.vue'),
+    meta: {
+      needlogin: true
+    }
+  },
+  {
+    path: '/PrintAReceipt4',
+    name: 'PrintAReceipt4',
+    component: () => import('../views/atm/PrintAReceipt4.vue'),
+    meta: {
+      needlogin: true
+    }
+  },
+  {
     path: '/TransferAccounts1',
     name: 'TransferAccounts1',
     component: () => import('../views/atm/TransferAccounts1.vue'),
@@ -239,11 +255,19 @@ const routes = [
     }
   },
   {
+    path: '/TransactionSuccess1',
+    name: 'TransactionSuccess1',
+    component: () => import('../views/atm/TransactionSuccess1.vue'),
+    meta: {
+      needlogin: true
+    }
+  },
+  {
     path: '/TakeCard',
     name: 'TakeCard',
     component: () => import('../views/atm/TakeCard.vue'),
     meta: {
-      needlogin: true
+      needlogin: false
     }
   }
 ]
