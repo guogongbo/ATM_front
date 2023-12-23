@@ -52,7 +52,7 @@ export default {
     var data = qs.stringify(params);
 
     axios
-        .get("http://localhost:8080/BankTransfer/changePassword?" + data)
+        .get("http://8.139.5.168:8080/BankTransfer/changePassword?" + data)
         .then(
             function (res) {
                 console.log(res.data);

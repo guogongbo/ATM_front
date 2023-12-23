@@ -35,7 +35,7 @@ export default {
     };
     var data = qs.stringify(params);
     this.$axios
-      .post("http://127.0.0.1:8080/BankTransfer/getCardNo", data)
+      .post("http://8.139.5.168:8080/BankTransfer/getCardNo", data)
       .then((res) => {
         this.cardno = res.data;
       });
@@ -59,7 +59,7 @@ export default {
         var data = qs.stringify(params);
         var _this = this;
         this.$axios
-          .post("http://127.0.0.1:8080/BankTransfer/disposit", data)
+          .post("http://8.139.5.168:8080/BankTransfer/disposit", data)
           .then(
             function(res) {
               console.log(res.data);

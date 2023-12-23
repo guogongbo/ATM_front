@@ -47,7 +47,7 @@ export default {
       };
       var data = qs.stringify(params);
       this.$axios
-        .post("http://127.0.0.1:8080/BankTransfer/getToAccount", data)
+        .post("http://8.139.5.168:8080/BankTransfer/getToAccount", data)
         .then((res) => {
           var len = res.data.length;
           if (len > 0) {
