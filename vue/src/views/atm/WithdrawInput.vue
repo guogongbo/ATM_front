@@ -48,7 +48,7 @@ export default {
     //   });
 
     this.$axios
-      .post("http://127.0.0.1:8080/BankTransfer/getRecords", data)
+      .post("http://8.139.5.168:8080/BankTransfer/getRecords", data)
       .then((res) => {
         this.dealResponse(res.data);
       });
@@ -91,7 +91,7 @@ export default {
       var data = qs.stringify(params);
 
       this.$axios
-      .post("http://127.0.0.1:8080/BankTransfer/getRecords", data)
+      .post("http://8.139.5.168:8080/BankTransfer/getRecords", data)
       .then((res) => {
         this.dealResponse(res.data);
       });
@@ -140,7 +140,7 @@ export default {
         var data = qs.stringify(params);
         var _this = this;
         this.$axios
-          .post("http://127.0.0.1:8080/BankTransfer/withdraw", data)
+          .post("http://8.139.5.168:8080/BankTransfer/withdraw", data)
           .then(
             function(res) {
               console.log(res.data);
